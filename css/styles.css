@@ -499,6 +499,8 @@ img {
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     padding: 8px 16px;
+    line-height: 2;
+    letter-spacing: 0.04em;
 }
 
 .footer-form-input::placeholder {
@@ -654,29 +656,40 @@ img {
     height: 40px;
     width: 100%;
     outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus-within {
     border-color: #4d5ae5;
 }
 
-.form-input:focus-within .modal-icon {
+.input-cont:focus-within .modal-icon {
     fill: #4D5AE5;
 }
 
-.agreement {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    margin-bottom: 24px;
+.textarea-cont {
+    margin-bottom: 16px;
 }
 
-textarea {
+.comment-input {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    outline: transparent;
     resize: none;
     width: 360px;
     height: 120px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 16px;
+    padding-top: 8px;
+}
+
+textarea:focus-within {
+    border-color: #4d5ae5;
 }
 
 textarea::placeholder {
@@ -685,11 +698,14 @@ textarea::placeholder {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    padding: 8px;
 }
 
 .send-button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.checkbox-cont {
+    margin-bottom: 24px;
 }
 
 .check-style {
@@ -702,9 +718,10 @@ textarea::placeholder {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
-input[type="checkbox"]:checked .check-style {
+input[type="checkbox"]:checked + label .check-style {
     fill: #F4F4FD;
     background-color: #404BBF;
     border: none;
